@@ -1,0 +1,8 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Authorization result - Fridgemates Publisher</title></head><body style="font-family:sans-serif;max-width:640px;margin:2em auto;padding:0 1em">
+<h1>Authorization result</h1>
+<p id="m">Reading...</p><pre id="o" style="white-space:pre-wrap;word-break:break-all;background:#eee;padding:1em"></pre>
+<script>
+var p=new URLSearchParams(location.search),c=p.get("code"),e=p.get("error");
+document.getElementById("m").textContent=c?"Copy the whole text below and give it to the operator. Do not share it elsewhere.":(e?"Authorization failed.":"No authorization data in this URL.");
+document.getElementById("o").textContent=c?("code="+c+"\nstate="+(p.get("state")||"")):(e?(e+": "+(p.get("error_description")||"")):"");
+</script></body></html>
